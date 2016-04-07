@@ -5,6 +5,7 @@ set -e
 # environment variables just to support cookiecutter out of the box. That makes no sense, so this little entrypoint
 # does all this for us.
 export REDIS_URL=redis://redis:6379
+echo "entrypoint.sh: POSTGRES_USER = " $POSTGRES_USER
 
 # the official postgres image uses 'postgres' as default user if not set explictly.
 if [ -z "$POSTGRES_USER" ]; then
@@ -12,6 +13,7 @@ if [ -z "$POSTGRES_USER" ]; then
 fi
 
 export DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@postgres:5432/$POSTGRES_USER
+echo "entrypoint.sh: DATABASE_URL = " $DATABASE_URL
 
 export CELERY_BROKER_URL=$REDIS_URL/0
 
