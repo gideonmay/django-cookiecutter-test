@@ -1,6 +1,40 @@
+// Installation on Vagrant
 Vagrant :
-  vagrant up
-  vagrant ssh
-  # Installs ubuntu 16.04 LTS (xenial64)
-  in Vagrant :
-    
+  $ vagrant up
+  $ vagrant ssh
+  //  Installs ubuntu 16.04 LTS (xenial64)
+  // in Vagrant :
+    // according to : http://cookiecutter-django.readthedocs.org/en/latest/developing-locally.html
+    % git clone https://github.com/gideonmay/django-cookiecutter-test.git
+    % cd django-cookiecutter-test
+    % sudo ./install_os_dependencies.sh install
+    % pip3 install setuptools
+
+    //  set default postgres user password
+    % sudo -u postgres psql postgres
+    # create role borges;
+    # alter role borges password 'xxxxx';
+    # alter role borges login;
+    # create database borges owner borges;
+    # <ctrl-D>
+
+    // Create database and make tables
+    % export DATABASE_URL='postgres://borges:xxxxx@127.0.0.1:5432/borges'
+    % python3 ./manage.py makemigrations
+    % python3 ./manage.py migrate
+
+    // Download mailhog
+    % curl -OL https://github.com/mailhog/MailHog/releases/download/v0.2.0/MailHog_linux_amd64
+    % mv MailHog_linux_amd64 mailhog
+    % chmod 755 mailhog
+
+    // Running with grunt server (automatic reloading css files etc...)
+    % npm install
+    % sudo npm install -g grunt
+     
+   // Hitch testing
+   % pip3 install hitch
+   % cd tests
+   % ~/.local/bin/hitch init
+   
+

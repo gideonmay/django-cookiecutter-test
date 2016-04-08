@@ -3,23 +3,35 @@
 build-essential
 python3
 python3-pip
+postgresql-9.5
+postgresql-common
+postgresql-client
+# postgresql-doc
 #required to translate
 gettext
 python-dev
 
 ##shared dependencies of:
 ##Pillow, pylibmc
-zlib1g-dev
+# zlib1g-dev
+
+# Node stuff
+nodejs-legacy
+npm
 
 ##Postgresql and psycopg2 dependencies
+<<<<<<< HEAD
 libpq-dev
 postgresql-client-common
+=======
+# libpq-dev
+>>>>>>> b710eb3d42bc78e2d014d8501e0c63dbf2fb9e31
 
 ##Pillow dependencies
-libtiff4-dev
+libtiff5-dev
 libjpeg8-dev
 libfreetype6-dev
-liblcms1-dev
+liblcms2-dev
 libwebp-dev
 
 
@@ -45,3 +57,7 @@ libbz2-dev
 wget
 curl
 llvm
+
+# flake8
+python3-flake8
+pylint
