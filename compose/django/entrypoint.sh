@@ -6,6 +6,7 @@ set -e
 # does all this for us.
 export REDIS_URL=redis://redis:6379
 echo "entrypoint.sh: POSTGRES_USER = " $POSTGRES_USER
+echo "entrypoint.sh: DJANGO_ALLOWED_HOSTS = " $DJANGO_ALLOWED_HOSTS
 
 # the official postgres image uses 'postgres' as default user if not set explictly.
 if [ -z "$POSTGRES_USER" ]; then

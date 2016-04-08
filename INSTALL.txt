@@ -1,0 +1,6 @@
+Vagrant :
+  vagrant up
+  vagrant ssh
+  # Installs ubuntu 16.04 LTS (xenial64)
+  in Vagrant :
+    

@@ -1,6 +1,8 @@
 ##basic build dependencies of various Django apps for Ubuntu 14.04
 #build-essential metapackage install: make, gcc, g++, 
 build-essential
+python3
+python3-pip
 #required to translate
 gettext
 python-dev
@@ -11,6 +13,7 @@ zlib1g-dev
 
 ##Postgresql and psycopg2 dependencies
 libpq-dev
+postgresql-client-common
 
 ##Pillow dependencies
 libtiff4-dev

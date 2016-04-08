@@ -75,7 +75,7 @@ SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/1.6/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['borges.xyz'])
-# END SITE CONFIGURATION
+print("ALLOWED_HOSTS = " + str(ALLOWED_HOSTS))
 
 INSTALLED_APPS += ("gunicorn", )
 
